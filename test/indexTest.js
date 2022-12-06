@@ -1,3 +1,30 @@
+var cats = ['Milo', 'Otis' , 'Garfield']
+
+function destructivelyAppendCat(name) {
+  return cats.push(name)
+}
+function destructivelyPrependCat(name) {
+  return cats.unshift(name)
+}
+function destructivelyRemoveLastCat(name) {
+  return cats.pop()
+}
+function destructivelyRemoveFirstCat(name) {
+  return cats.shift()
+}
+
+function appendCat(name) {
+  return [...cats,name]
+}
+function prependCat(name) {
+  return [name,...cats]
+}
+function removeFirstCat() {
+  return cats.slice(1)
+}
+function removeLastCat() {
+  return cats.slice(0, cats.length -1)
+}
 describe('index.js', function () {
   describe('cats', function () {
     it('is assigned an initial value of ["Milo", "Otis", "Garfield"]', function () {
@@ -11,6 +38,7 @@ describe('index.js', function () {
 
       cats.push('Milo', 'Otis', 'Garfield');
     });
+
 
     describe('destructivelyAppendCat(name)', function () {
       it('appends a cat to the end of the cats array', function () {
